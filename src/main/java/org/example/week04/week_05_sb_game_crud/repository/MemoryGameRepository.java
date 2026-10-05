@@ -1,12 +1,14 @@
 package org.example.week04.week_05_sb_game_crud.repository;
 
 import org.example.week04.week_05_sb_game_crud.domain.Game;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public class MemoryGameRepository implements GameRepository{
 
     private Map<Long, Game> store = new LinkedHashMap<>();
