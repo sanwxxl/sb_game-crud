@@ -8,28 +8,36 @@ import java.util.List;
 import java.util.Map;
 
 public class MemoryGameRepository implements GameRepository{
+
+    private Map<Long, Game> store = new LinkedHashMap<>();
+    private long sequence = 0L;
+
     @Override
     public Game save(Game game) {
-        return null;
+        sequence = sequence + 1;
+        game.setId(sequence);
+        store.put(game.getId(), game);
+        return game;
     }
 
     @Override
     public List<Game> findAll() {
-        return List.of();
+        return new ArrayList<>(store.values());
     }
 
     @Override
     public Game findById(Long id) {
-        return null;
+        return store.get(id);
     }
 
     @Override
     public Game update(Game game) {
-        return null;
+        store.put(game.getId(), game);
+        return game;
     }
 
     @Override
     public void deleteById(Long id) {
-
+        store.remove(id);
     }
 }
