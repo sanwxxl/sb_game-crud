@@ -1,4 +1,4 @@
-package org.example.week04.week_05_sb_game_crud_solution;
+package org.example.week04.week_05_sb_game_crud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
